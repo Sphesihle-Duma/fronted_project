@@ -1,0 +1,113 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-image: url("/images/giphy.webp");
+    background-position: cover;
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgb(89, 205, 235);
+}
+.header{
+    
+    text-align: center;
+    text-transform: uppercase;
+    padding: 20px 10px;
+    /*border-bottom: 4px solid rgb(89, 205, 235); */
+}
+.navbar{
+    
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+}
+.logo{
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+.menu-toggle{
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+.menu-toggle .bar{
+    height: 3px;
+    width: 25px;
+    background-color: white;
+    margin: 3px 0;
+    transition: all 0.3s;
+}
+.nav-links{
+    list-style: none;
+    display: flex;
+    gap:20px;
+}
+.nav-links li{
+    padding: 10px 0;
+}
+.nav-links a{
+    text-decoration: none;
+    color: rgb(89, 205, 235);
+    transition: color 0.3s;
+}
+.nav-links a:hover{
+    color: #ff9800;
+}
+.card{
+    flex: 1 1 calc(33.333% - 16px);
+    min-width: 300px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+.card img{
+    height: 300px;
+    width: 100%;
+    object-fit: cover;
+}
+.gallery{
+    margin: 0 auto;
+    width: 90%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    justify-content: space-between;
+    padding: 10px 0px; 
+}
+.card p{
+    padding: 10px;
+    font-size: 14px;
+    color: white;
+    text-align: justify;
+    line-height: 1.5;
+
+}
+@media (max-width: 768px){
+    .card{
+        flex: 1 1 calc(50% - 16px);
+    }
+    .nav-links{
+        display: none;
+        flex-direction: column;
+        gap: 10px;
+        position: absolute;
+        top: 60px;
+        right: 20px;
+        background-color: #333;;
+        width: 200px;
+        padding: 10px;
+        border-radius: 8px;
+    }
+    .nav-links.active{
+        display: flex;
+    }
+    .menu-toggle{
+        display: flex;
+    } 
+}
+@media (max-width: 480px){
+    .card{
+        flex: 1 1 100%;
+    }
+}
